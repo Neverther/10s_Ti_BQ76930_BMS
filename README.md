@@ -308,7 +308,7 @@ void loop() {
       PRINT("C,");
       PRINT(i);
       PRINT(",");
-      if (!(BMS.getBalancingStatus() & (1 << i)))
+      if ((BMS.getBalancingStatus() & (1 << i)))
       {
         PRINT("X,");
       }

@@ -99,7 +99,7 @@ bq769x0::bq769x0(byte bqType, byte cellcount)
 
 int bq769x0::begin(byte alertPin, byte cellcount, uint8_t reg_RSNS)
 {
-  balancingCells = 0xff;
+  balancingCells = 0x00;
   overChargeCurrent = false;
   Wire.begin();        // join I2C bus
   Wire.setClock(100000UL);
@@ -1157,7 +1157,7 @@ void bq769x0::printRegisters()
 
   Serial.print(F("0x02 CELLBAL2:  "));
   Serial.println(byte2char(readRegister(CELLBAL2)));
-
+/*
   Serial.print(F("0x04 SYS_CTRL1: "));
   Serial.println(byte2char(readRegister(SYS_CTRL1)));
 
@@ -1214,6 +1214,7 @@ void bq769x0::printRegisters()
 
   Serial.print(F("VC3 Lo:     "));
   Serial.println(byte2char(readRegister(VC3_LO_BYTE)));
+*/
 }
 
 #endif
